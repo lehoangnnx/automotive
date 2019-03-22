@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
+
+Auth::routes();
+
 //Clear configurations:
 Route::get('/config-clear', function() {
     $status = Artisan::call('config:clear');
@@ -35,4 +38,6 @@ Route::get('/clear', function() {
     return '<h1>Done</h1>';
 });
 Route::get('/', 'HomeController@index');
-Route::resource('collection', 'CollectionController');
+
+
+Route::get('/admin', 'Admin\DashboardController@index');

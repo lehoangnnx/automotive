@@ -201,7 +201,7 @@
                                             <a href="#" data-filter=".{{$category->id}}">{{$category->name}}</a>
                                         @endforeach
                                     </div>
-                                    <!-- Filtering Menu -->
+                                    <!-- Filtering Menu --> 
 
                                     <!-- PopularCars Tab Content Start -->
                                     <div class="row popular-car-gird">
