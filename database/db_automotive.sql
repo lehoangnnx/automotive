@@ -202,6 +202,8 @@ CREATE TABLE `products` (
   `name` varchar(200) DEFAULT NULL,
   `price` varchar(45) DEFAULT NULL,
   `discriptions` longtext,
+  `images` varchar(300) DEFAULT NULL,
+  `list_images` text,
   PRIMARY KEY (`id`),
   KEY `products_categories_idx` (`categories_id`),
   CONSTRAINT `products_categories` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -214,7 +216,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,1,'Ford Fiesta 1.5L Titanium','525.000.000',NULL);
+INSERT INTO `products` VALUES (1,1,'Ford Fiesta 1.5L Titanium','525.000.000',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,7 +264,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -271,6 +273,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'admin','admin@gmail.com',NULL,'$2y$10$3BMZRpT8KZTBO10h4KNlmOWc5UcaAVk5mp3ebhzuy/02JFj8HGCJ2',NULL,'2019-03-22 07:59:54','2019-03-22 07:59:54');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -283,4 +286,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-21 22:54:47
+-- Dump completed on 2019-03-22 22:08:46
