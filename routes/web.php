@@ -37,7 +37,8 @@ Route::get('/clear', function() {
     Artisan::call('config:cache');
     return '<h1>Done</h1>';
 });
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 
-Route::get('/admin', 'Admin\DashboardController@index');
+Route::get('/admin', 'Admin\DashboardController@index')->name('admin');
+Route::resource('admin/category', 'Admin\CategoryController');

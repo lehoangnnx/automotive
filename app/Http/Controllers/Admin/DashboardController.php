@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Category;
+use App\Product;
 class DashboardController extends Controller
 {
     /**
@@ -24,6 +25,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $categories = Category::all();
+        $products = Product::all();
+        return view('admin.dashboard')->with('categories', $categories)
+        ->with('products', $products);
     }
 }
