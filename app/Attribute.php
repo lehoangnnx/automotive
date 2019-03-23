@@ -8,9 +8,8 @@ class Attribute extends Model
 {
     protected $table = 'attributes';
     public $primeryKey = 'id';
-    public $timestamps= true;
+    public $timestamps= false;
     public function attributeValue(){
         return $this->hasMany('App\AttributeValue', 'attributes_id');
-
     }
 }

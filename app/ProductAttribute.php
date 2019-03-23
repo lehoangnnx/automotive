@@ -8,7 +8,7 @@ class ProductAttribute extends Model
 {
     protected $table = 'products_attributes';
     public $primeryKey = 'id';
-    public $timestamps= true;
+    public $timestamps= false;
 
     public function product()
     {

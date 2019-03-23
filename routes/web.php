@@ -38,7 +38,10 @@ Route::get('/clear', function() {
     return '<h1>Done</h1>';
 });
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::get('/detail/{id}', 'DetailController@index')->name('detail');
 
 Route::get('/admin', 'Admin\DashboardController@index')->name('admin');
 Route::resource('admin/category', 'Admin\CategoryController');
+Route::resource('admin/attribute', 'Admin\AttributeController');
+Route::resource('admin/attribute-value', 'Admin\AttributeValueController');
+Route::resource('admin/product', 'Admin\ProductController');

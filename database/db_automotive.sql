@@ -26,7 +26,7 @@ CREATE TABLE `attributes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,6 +35,7 @@ CREATE TABLE `attributes` (
 
 LOCK TABLES `attributes` WRITE;
 /*!40000 ALTER TABLE `attributes` DISABLE KEYS */;
+INSERT INTO `attributes` VALUES (1,'Bánh xe	'),(4,'Cửa');
 /*!40000 ALTER TABLE `attributes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,7 +53,7 @@ CREATE TABLE `attributes_values` (
   PRIMARY KEY (`id`),
   KEY `attribute_attribute_value_idx` (`attributes_id`),
   CONSTRAINT `attibutes_attibutes_values` FOREIGN KEY (`attributes_id`) REFERENCES `attributes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,6 +62,7 @@ CREATE TABLE `attributes_values` (
 
 LOCK TABLES `attributes_values` WRITE;
 /*!40000 ALTER TABLE `attributes_values` DISABLE KEYS */;
+INSERT INTO `attributes_values` VALUES (1,1,'4 bánh'),(2,1,'6 Banh'),(3,1,'7'),(5,1,'8'),(6,4,'5555');
 /*!40000 ALTER TABLE `attributes_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,7 +77,7 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +86,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Ford Fiesta'),(2,'Ford Focus'),(3,'Ford Ecosport'),(4,'Ford Everest'),(5,'Ford Explorer'),(6,'Ford Ranger'),(7,'Ford Transit');
+INSERT INTO `categories` VALUES (1,'Ford Fiesta'),(2,'Ford Focus'),(3,'Ford Ecosport'),(4,'Ford Everest'),(5,'Ford Explorer'),(6,'Ford Ranger'),(7,'Ford Transit'),(12,'ád123');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,11 +205,11 @@ CREATE TABLE `products` (
   `price` varchar(45) DEFAULT NULL,
   `discriptions` longtext,
   `images` varchar(300) DEFAULT NULL,
-  `list_images` text,
+  `is_show` tinyint(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `products_categories_idx` (`categories_id`),
   CONSTRAINT `products_categories` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -216,7 +218,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,1,'Ford Fiesta 1.5L Titanium','525.000.000',NULL,NULL,NULL);
+INSERT INTO `products` VALUES (18,1,'12','1','1','1553341829_6746312_65a055ac0d1663b43b58ae2f35d54e79.jpg',NULL),(19,1,'z','z','z','1553346824_7142794_ce336d9912db60c87009571df2b4c02f.jpg',NULL),(20,1,'z','z','z','1553346837_8981779_d7dce1733e67f02db67388b6bcdcc7e5.jpg',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,7 +245,35 @@ CREATE TABLE `products_attributes` (
 
 LOCK TABLES `products_attributes` WRITE;
 /*!40000 ALTER TABLE `products_attributes` DISABLE KEYS */;
+INSERT INTO `products_attributes` VALUES (20,3);
 /*!40000 ALTER TABLE `products_attributes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products_list_images`
+--
+
+DROP TABLE IF EXISTS `products_list_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products_list_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `products_id` int(11) NOT NULL,
+  `images` text,
+  PRIMARY KEY (`id`),
+  KEY `product_products_list_images_idx` (`products_id`),
+  CONSTRAINT `product_products_list_images` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products_list_images`
+--
+
+LOCK TABLES `products_list_images` WRITE;
+/*!40000 ALTER TABLE `products_list_images` DISABLE KEYS */;
+INSERT INTO `products_list_images` VALUES (44,19,'1553346824_7580895_fd7af0cd55c77c5d725633930a788880.jpg'),(45,20,'1553346837_6446646_f01493c9ebcbaa86b2615dbfdeb7e605.jpg'),(48,18,'1553358339_6039058_3b680c32cc0819dec467dfdb3786bcbd.jpg'),(49,18,'1553358339_1305799_a541ad6379efd488faba22ce23a8348d.png');
+/*!40000 ALTER TABLE `products_list_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -286,4 +316,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-22 22:08:46
+-- Dump completed on 2019-03-23 23:35:29

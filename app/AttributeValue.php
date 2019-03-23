@@ -8,11 +8,11 @@ class AttributeValue extends Model
 {
     protected $table = 'attributes_values';
     public $primeryKey = 'id';
-    public $timestamps= true;
+    public $timestamps= false;
 
     public function attribute()
     {
-        return $this->belongsTo('App\Attribute', 'id');
+        return $this->belongsTo('App\Attribute', 'attributes_id');
     }
     public function productAttribute()
     {
