@@ -7,8 +7,6 @@
 @endif
 
   @include('admin.inc.categories.listCategories')
-  @include('admin.inc.attributes.listAttributes')
-  @include('admin.inc.attributesValues.listAttributesValues')
   @include('admin.inc.cars.listCars')
   
 @endsection

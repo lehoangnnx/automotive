@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
 use App\Product;
-use App\Attribute;
-use App\AttributeValue;
 
 class DashboardController extends Controller
 {
@@ -29,12 +27,8 @@ class DashboardController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $attributes = Attribute::all();
-        $attributesValues = AttributeValue::all();
         $products = Product::all();
         return view('admin.dashboard')->with('categories', $categories)
-        ->with('products', $products)
-        ->with('attributes', $attributes)
-        ->with('attributesValues', $attributesValues);
+        ->with('products', $products);
     }
 }

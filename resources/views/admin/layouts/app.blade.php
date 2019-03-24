@@ -12,7 +12,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    {{-- <script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js" defer></script> --}}
+    <script src="{{ asset('ckeditor/ckeditor/ckeditor.js') }}" ></script>
+    {{-- <script src="//cdn.ckeditor.com/4.11.3/full/ckeditor.js"></script> --}}
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -20,7 +22,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!--=== Main Style CSS ===-->
-    <link href="{{asset('css/custom.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -74,7 +75,7 @@
             </div>
         </main>
     </div>
-</body>
+
 <script>
     function ConfirmDelete() {
         var x = confirm("Bạn Muốn Xóa?");
@@ -84,5 +85,8 @@
             return false;
     }
 </script>
+
+</body>
+
 
 </html>

@@ -39,9 +39,9 @@ Route::get('/clear', function() {
 });
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/detail/{id}', 'DetailController@index')->name('detail');
+Route::post('/send-contact', 'HomeController@sendContact')->name('sendContact');
 
 Route::get('/admin', 'Admin\DashboardController@index')->name('admin');
 Route::resource('admin/category', 'Admin\CategoryController');
-Route::resource('admin/attribute', 'Admin\AttributeController');
-Route::resource('admin/attribute-value', 'Admin\AttributeValueController');
 Route::resource('admin/product', 'Admin\ProductController');
+Route::resource('admin/contact', 'Admin\ContactController');

@@ -23,15 +23,13 @@
         </tr>
         <tr>
             <td>{!! Form::label('lblDiscription', 'Mô Tả') !!}</td>
-            <td>{!! Form::text('discriptions',$product->discriptions,['required']) !!}</td>
+            <td>{!! Form::textarea('discriptions',$product->discriptions,['class' => 'ckeditor','required']) !!}</td>
         </tr>
-        <tr>
-            <td>{!! Form::label('lblProductAttribute', 'Thuộc Tính') !!}</td>
-            <td>{!! Form::select('attributes_values[]', $attributesValues->pluck('name', 'id'), $product->productAttribute->pluck('attributes_values_id'), ['multiple' => true])!!}</td>
-        </tr>
+        
         <tr>
             <td>{!! Form::label('lblImages', 'Hình') !!}</td>
-            <td><img width="100px" height="100px" class="img-thumbnail" src="{{ asset('uploads')}}/{{ $product->images }}">{!! Form::file('image', ['accept' => 'image/*'])  !!}</td>
+            <td><img width="100px" height="100px" class="img-thumbnail" src="{{ asset('uploads')}}/{{ $product->images }}">
+                {!! Form::file('image', ['accept' => 'image/*'])  !!}</td>
         </tr>
         <tr>
             <td>{!! Form::label('lblListImages', 'Danh Sách Hình') !!}</td>
@@ -43,6 +41,15 @@
             </td>
         </tr>
         <tr>
+                <td>{!! Form::label('lblSpecificationImages', 'Hình Ảnh Thông Số') !!}</td>
+                <td><img width="100px" height="100px" class="img-thumbnail" src="{{ asset('uploads')}}/{{ $product->specification_images }}">
+                    {!! Form::file('specification_images', ['accept' => 'image/*'])  !!}</td>
+            </tr>
+        <tr>
+                <tr>
+                        <td>{!! Form::label('lblDiscription', 'Nội Dung Thông Số') !!}</td>
+                        <td>{!! Form::textarea('specification_descriptions',$product->specification_descriptions,['class' => 'ckeditor']) !!}</td>
+                    </tr>
             <td></td>
             <td>
                 {!! Form::submit('Cập nhật', ['class' => 'btn btn-success'])!!}

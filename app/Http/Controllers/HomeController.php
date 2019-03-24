@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Contact;
 class HomeController extends Controller
 {
 
@@ -15,6 +16,12 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
+        return view('home')->with('categories', $categories);
+    }
+
+    public function sendContact(Request $request)
+    {
+        $contact = new Contact;
         return view('home')->with('categories', $categories);
     }
 }

@@ -23,12 +23,9 @@
         </tr>
         <tr>
             <td>{!! Form::label('lblDiscription', 'Mô Tả') !!}</td>
-            <td>{!! Form::text('discriptions',null,['required']) !!}</td>
+            <td>{!! Form::textarea('discriptions',null,['class' => 'ckeditor','required']) !!}</td>
         </tr>
-        <tr>
-            <td>{!! Form::label('lblProductAttribute', 'Thuộc Tính') !!}</td>
-            <td>{!! Form::select('attributes_values[]', $attributesValues->pluck('name', 'id'), null, ['multiple' => true])!!}</td>
-        </tr>
+       
         <tr>
             <td>{!! Form::label('lblImages', 'Hình') !!}</td>
             <td>{!! Form::file('image', ['accept' => 'image/*','required'])  !!}</td>
@@ -36,6 +33,14 @@
         <tr>
             <td>{!! Form::label('lblListImages', 'Danh Sách Hình') !!}</td>
             <td>{!! Form::file('listImages[]', ['accept' => 'image/*', 'multiple','required'])  !!}</td>
+        </tr>
+        <tr>
+            <td>{!! Form::label('lblSpecificationImages', 'Hình Ảnh Thông Số') !!}</td>
+            <td>{!! Form::file('specification_images', ['accept' => 'image/*'])  !!}</td>
+        </tr>
+        <tr>
+            <td>{!! Form::label('lblDiscription', 'Nội Dung Thông Số') !!}</td>
+            <td>{!! Form::textarea('specification_descriptions',null,['class' => 'ckeditor']) !!}</td>
         </tr>
         <tr>
             <td></td>

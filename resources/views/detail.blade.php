@@ -6,7 +6,7 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Our Cars</h2>
+                        <h2>Thông Tin Xe</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                     </div>
                 </div>
@@ -34,91 +34,25 @@
                             
                         </div>
                         <div class="car-details-info">
-                            <h4>Additional Info</h4>
-                            <p>The Aventador LPER 720-4 50° ise a limited (200 units – 100 Coupe and 100 Roadster) versione of thed Aventadored LP 700-4 commemorating the 50th anniversary of Lamborghini. It included ised increased engine power to 720 PS (530 kW; 710 bhp) via a new specific engine calibration, enlarged and extended front air intakes and the aerodynamic splitter.</p>
-
-                            <div class="technical-info">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="tech-info-table">
-                                            <table class="table table-bordered">
-                                                <tr>
-                                                    <th>Class</th>
-                                                    <td>Compact</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Fuel</th>
-                                                    <td>Petrol</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Doors</th>
-                                                    <td>5</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>GearBox</th>
-                                                    <td>Automatic</td>
-                                                </tr>
-                                            </table>
+                                <ul class="nav nav-pills nav-justified" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-item nav-link nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Thông Tin Chi Tiết</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-item nav-link nav-link" data-toggle="tab" href="#tabs-2" role="tab">Thông Số Kỹ Thuật</a>
+                                        </li>
+                                    </ul><!-- Tab panes -->
+                                    <div class="tab-content p-3 single-sidebar">
+                                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                            {!! $product->discriptions !!}      
+                                         </div>
+                                        <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                                <img src="{{ asset('uploads')}}/{{ $product->specification_images }}" >
+                                            {!! $product->specification_descriptions !!}    
                                         </div>
+                                        
                                     </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="tech-info-list">
-                                            <ul>
-                                                <li>ABS</li>
-                                                <li>Air Bags</li>
-                                                <li>Bluetooth</li>
-                                                <li>Car Kit</li>
-                                                <li>GPS</li>
-                                                <li>Music</li>
-                                                <li>Bluetooth</li>
-                                                <li>ABS</li>
-                                                <li>GPS</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-
-                            <div class="review-area">
-                                <h3>Be the first to review “Aston Martin One-77”</h3>
-                                <div class="review-star">
-                                    <p class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star unmark"></i>
-                                        <i class="fa fa-star unmark"></i>
-                                    </p>
-                                </div>
-                                <div class="review-form">
-                                    <form action="index.html">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="name-input">
-                                                    <input type="text" placeholder="Full Name">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="email-input">
-                                                    <input type="email" placeholder="Email Address">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="message-input">
-                                            <textarea name="review" cols="30" rows="5" placeholder="Write Your Feedback Here!"></textarea>
-                                        </div>
-
-                                        <div class="input-submit">
-                                            <button type="submit">Submit</button>
-                                            <button type="reset">Clear</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- Car List Content End -->
@@ -135,6 +69,44 @@
                                 <p><i class="fa fa-clock-o"></i> Mon - Sat 8.00 - 18.00</p>
                             </div>
                         </div>  
+                        <div class="single-sidebar">
+                                <div class="review-area">
+                                        <h3>Liên Hệ</h3>
+                                        <div class="review-form p-3">
+                                            <form action="{{ route('sendContact')}}" method="POST">
+                                                @csrf
+                                                @method('POST')
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="name-input">
+                                                            <input required name="name" type="text" placeholder="Họ Và Tên">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 pt-3">
+                                                            <div class="email-input">
+                                                                <input required name="email" type="email" placeholder="Email">
+                                                            </div>
+                                                        </div>
+                                                    <div class="col-lg-12 col-md-12 pt-3">
+                                                        <div class="email-input">
+                                                            <input required name="phone" type="text" placeholder="Số Điện Thoại">
+                                                        </div>
+                                                    </div>
+                                                </div>
+        
+                                                <div class="message-input">
+                                                    <textarea required name="content" cols="30" rows="5" placeholder="Nội Dung"></textarea>
+                                                </div>
+        
+                                                <div class="input-submit">
+                                                    <button type="submit">Gửi</button>
+                                                    <button type="reset">Hủy</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                            </div>  
+                            
                     </div>
                 </div>
                 <!-- Sidebar Area End -->
