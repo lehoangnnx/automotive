@@ -43,7 +43,7 @@
             <div class="row">
                 <!--== Logo Start ==-->
                 <div class="col-lg-4">
-                    <a href="index.html" class="logo">
+                    <a href="{{route('home')}}" class="logo">
                         <img src="{{asset('img/logo.png')}}" alt="JSOFT">
                     </a>
                 </div>
