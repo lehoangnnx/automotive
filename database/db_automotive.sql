@@ -16,57 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `attributes`
---
-
-DROP TABLE IF EXISTS `attributes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `attributes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `attributes`
---
-
-LOCK TABLES `attributes` WRITE;
-/*!40000 ALTER TABLE `attributes` DISABLE KEYS */;
-INSERT INTO `attributes` VALUES (1,'Bánh xe	'),(4,'Cửa');
-/*!40000 ALTER TABLE `attributes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `attributes_values`
---
-
-DROP TABLE IF EXISTS `attributes_values`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `attributes_values` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `attributes_id` int(11) NOT NULL,
-  `name` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `attribute_attribute_value_idx` (`attributes_id`),
-  CONSTRAINT `attibutes_attibutes_values` FOREIGN KEY (`attributes_id`) REFERENCES `attributes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `attributes_values`
---
-
-LOCK TABLES `attributes_values` WRITE;
-/*!40000 ALTER TABLE `attributes_values` DISABLE KEYS */;
-INSERT INTO `attributes_values` VALUES (1,1,'4 bánh'),(2,1,'6 Banh'),(3,1,'7'),(5,1,'8'),(6,4,'5555');
-/*!40000 ALTER TABLE `attributes_values` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `categories`
 --
 
@@ -77,7 +26,7 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,32 +63,6 @@ CREATE TABLE `contacts` (
 LOCK TABLES `contacts` WRITE;
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
 /*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `features`
---
-
-DROP TABLE IF EXISTS `features`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `features` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `products_id` int(11) NOT NULL,
-  `name` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `features_products_idx` (`products_id`),
-  CONSTRAINT `features_products` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `features`
---
-
-LOCK TABLES `features` WRITE;
-/*!40000 ALTER TABLE `features` DISABLE KEYS */;
-/*!40000 ALTER TABLE `features` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -206,10 +129,12 @@ CREATE TABLE `products` (
   `discriptions` longtext,
   `images` varchar(300) DEFAULT NULL,
   `is_show` tinyint(2) DEFAULT NULL,
+  `specification_images` varchar(300) DEFAULT NULL,
+  `specification_descriptions` longtext,
   PRIMARY KEY (`id`),
   KEY `products_categories_idx` (`categories_id`),
   CONSTRAINT `products_categories` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,35 +143,8 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (18,1,'12','1','1','1553341829_6746312_65a055ac0d1663b43b58ae2f35d54e79.jpg',NULL),(19,1,'z','z','z','1553346824_7142794_ce336d9912db60c87009571df2b4c02f.jpg',NULL),(20,1,'z','z','z','1553346837_8981779_d7dce1733e67f02db67388b6bcdcc7e5.jpg',NULL);
+INSERT INTO `products` VALUES (18,1,'12','1','1','1553341829_6746312_65a055ac0d1663b43b58ae2f35d54e79.jpg',NULL,NULL,NULL),(19,1,'z','z','z','1553346824_7142794_ce336d9912db60c87009571df2b4c02f.jpg',NULL,NULL,NULL),(20,1,'z','z','z','1553346837_8981779_d7dce1733e67f02db67388b6bcdcc7e5.jpg',NULL,NULL,NULL),(21,1,'a','a','a','1553406611_4135253_6e5529da44a70921c1d04e873437b99f.jpg',NULL,NULL,NULL),(22,1,'v','v','<figure class=\"easyimage easyimage-full\"><img alt=\"\" src=\"blob:http://xin.test/91b42972-3915-4b96-9570-184d2f5c72a1\" width=\"1920\" />\r\n<figcaption></figcaption>\r\n</figure>\r\n\r\n<p>&nbsp;</p>','1553417153_9944388_8eef97f6a62aa6717f4f09f86bae073b.jpg',NULL,NULL,NULL),(23,1,'y','y','<p><img alt=\"\" src=\"/ckeditor/kcfinder/upload/images/21106710_208810812986179_8029076092829563617_n.jpg\" style=\"height:639px; width:960px\" /></p>','1553420709_4001234_0697dee311dd95918e80140b51eb2957.jpg',NULL,NULL,NULL),(24,1,'ttt','ttt','<p style=\"text-align:center\">qweqweqweqeqqwe</p>','1553425279_4903806_ef3f7bd4534c642623fa6b38a2847210.jpg',NULL,'1553425279_4755390_82f8725f5c57afaa5ef1cdded36d5f1d.png','<p style=\"text-align:right\">qweqweqweqwe</p>');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `products_attributes`
---
-
-DROP TABLE IF EXISTS `products_attributes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products_attributes` (
-  `products_id` int(11) NOT NULL,
-  `attributes_values_id` int(11) NOT NULL,
-  KEY `attributes_products_attributes_idx` (`attributes_values_id`),
-  KEY `products_products_attributes_idx` (`products_id`),
-  CONSTRAINT `attributes_products_attributes` FOREIGN KEY (`attributes_values_id`) REFERENCES `attributes_values` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `products_products_attributes` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products_attributes`
---
-
-LOCK TABLES `products_attributes` WRITE;
-/*!40000 ALTER TABLE `products_attributes` DISABLE KEYS */;
-INSERT INTO `products_attributes` VALUES (20,3);
-/*!40000 ALTER TABLE `products_attributes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -263,7 +161,7 @@ CREATE TABLE `products_list_images` (
   PRIMARY KEY (`id`),
   KEY `product_products_list_images_idx` (`products_id`),
   CONSTRAINT `product_products_list_images` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -272,7 +170,7 @@ CREATE TABLE `products_list_images` (
 
 LOCK TABLES `products_list_images` WRITE;
 /*!40000 ALTER TABLE `products_list_images` DISABLE KEYS */;
-INSERT INTO `products_list_images` VALUES (44,19,'1553346824_7580895_fd7af0cd55c77c5d725633930a788880.jpg'),(45,20,'1553346837_6446646_f01493c9ebcbaa86b2615dbfdeb7e605.jpg'),(48,18,'1553358339_6039058_3b680c32cc0819dec467dfdb3786bcbd.jpg'),(49,18,'1553358339_1305799_a541ad6379efd488faba22ce23a8348d.png');
+INSERT INTO `products_list_images` VALUES (44,19,'1553346824_7580895_fd7af0cd55c77c5d725633930a788880.jpg'),(45,20,'1553346837_6446646_f01493c9ebcbaa86b2615dbfdeb7e605.jpg'),(48,18,'1553358339_6039058_3b680c32cc0819dec467dfdb3786bcbd.jpg'),(49,18,'1553358339_1305799_a541ad6379efd488faba22ce23a8348d.png'),(50,21,'1553406611_4760535_60cb0ffa307cefc4b508c8bc312daee3.jpg'),(51,21,'1553406611_5175708_ceaeabbce9c9533ad9c0067a3afc69b8.png'),(52,22,'1553417153_6099278_3e4da7eb63da1309662b8aa09c63368d.jpg'),(53,23,'1553420709_6346956_2a26eeb66b8ebdcbe90362239aaf2305.jpg'),(54,24,'1553425279_6128347_4c15e4d0446d90cc51d9b0b8d6e2b3c4.jpg');
 /*!40000 ALTER TABLE `products_list_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,4 +214,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-23 23:35:29
+-- Dump completed on 2019-03-24 20:05:11
