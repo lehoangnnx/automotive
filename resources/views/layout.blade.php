@@ -52,7 +52,7 @@
     @include('inc.nav')
     <!--== Header Area End ==-->
 
-   
+
 
     <!--== Partner Area Start ==-->
     <!--== Partner Area End ==-->
@@ -65,7 +65,7 @@
 
     <!--== Choose Car Area Start ==-->
     @yield('content')
-    
+
     <section id="footer-area">
         <!-- Footer Widget Start -->
         <div class="footer-widget-area">
@@ -78,7 +78,6 @@
                             <div class="widget-body">
                                 <img src="{{asset('img/logo.png')}}" alt="JSOFT">
                                 <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
-
                                 <div class="newsletter-area">
                                     <form action="index.html">
                                         <input type="email" placeholder="Subscribe Our Newsletter">
@@ -99,7 +98,7 @@
                                 <ul class="recent-post">
                                     <li>
                                         <a href="#">
-                                           Hello Bangladesh! 
+                                           Hello Bangladesh!
                                            <i class="fa fa-long-arrow-right"></i>
                                        </a>
                                     </li>
@@ -111,7 +110,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                           Hello Bangladesh! 
+                                           Hello Bangladesh!
                                            <i class="fa fa-long-arrow-right"></i>
                                        </a>
                                     </li>
