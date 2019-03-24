@@ -13,12 +13,12 @@
     @foreach ($attributesValues as $attributeValue)
     <tr>
       <th scope="row">{{$loop->index }}</th>
-      <td>{{ $attributeValue->attribute->name }}</td>
+      <td><a href="{{ route('attribute-value.edit', $attributeValue ) }}" class="product-name"><h5>{{ $attributeValue->attribute->name }}</h5></a></td>
       <td>{{ $attributeValue->name }}</td>
-      <td><a href="{{ route('attribute-value.edit', $attributeValue ) }}">Sửa</a></td>
+      <td><a href="{{ route('attribute-value.edit', $attributeValue ) }}" class="btn btn-primary">Sửa</a></td>
       <td>
         {!! Form::open(['method' => 'DELETE', 'route' => ['attribute-value.destroy', $attributeValue], 'onsubmit' => 'return ConfirmDelete()']) !!}
-        {!! Form::submit('Xóa')!!}
+        {!! Form::submit('Xóa', ['class' => 'btn btn-danger'])!!}
         {!! Form::close() !!}
       </td>
     </tr>

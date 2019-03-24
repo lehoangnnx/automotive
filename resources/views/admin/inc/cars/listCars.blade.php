@@ -17,16 +17,16 @@
       <th scope="row">{{$loop->index }}</th>
       <td><img width="100px" height="100px" class="img-thumbnail" src="{{ asset('uploads')}}/{{ $product->images }}"></td>
       <td>
-      @foreach($product->listImages as $productListImages) 
+      @foreach($product->listImages as $productListImages)
         <img width="100px" height="100px" class="img-thumbnail" src="{{ asset('uploads')}}/{{ $productListImages->images }}">
       @endforeach
       </td>
-      <td>{{$product->name}}</td>
+      <td><a href="{{ route('product.edit', $product ) }}" class="product-name"><h5>{{$product->name}}</h5></a></td>
       <td>{{$product->price}} VND</td>
       <td><a href="{{ route('product.edit', $product ) }}">Sửa</a></td>
       <td>
         {!! Form::open(['method' => 'DELETE', 'route' => ['product.destroy', $product], 'onsubmit' => 'return ConfirmDelete()']) !!}
-        {!! Form::submit('Xóa')!!}
+        {!! Form::submit('Xóa', ['class' => 'btn btn-danger'])!!}
         {!! Form::close() !!}
       </td>
     </tr>
