@@ -13,7 +13,7 @@
         <tr>
             <th scope="row">{{$loop->index }}</th>
             <td><a href="{{ route('attribute.edit', $attribute ) }}" class="product-name"><h5>{{$attribute->name}}</h5></td>
-            <td><a href="{{ route('attribute.edit', $attribute ) }}" class="btn btn-primary">Sửa</a></td>
+            <td><a href="{{ route('attribute.edit', $attribute ) }}" class="btn btn-primary">Chỉnh sửa</a></td>
             <td>
                 {!! Form::open(['method' => 'DELETE', 'route' => ['attribute.destroy', $attribute], 'onsubmit' => 'return ConfirmDelete()']) !!}
                 {!! Form::submit('Xóa', ['class' => 'btn btn-danger'])!!}

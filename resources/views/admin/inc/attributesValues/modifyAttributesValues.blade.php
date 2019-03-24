@@ -20,7 +20,7 @@
         <tr>
             <td></td>
             <td>
-                {!! Form::submit('Sửa')!!}
+                {!! Form::submit('Cập nhật', ['class' => 'btn btn-success'])!!}
                 <a href="{{url('/admin')}}" class="btn btn-primary">Trở về trang chủ</a>
             </td>
         </tr>

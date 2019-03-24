@@ -23,7 +23,7 @@
       </td>
       <td><a href="{{ route('product.edit', $product ) }}" class="product-name"><h5>{{$product->name}}</h5></a></td>
       <td>{{$product->price}} VND</td>
-      <td><a href="{{ route('product.edit', $product ) }}" class="btn btn-primary">Sửa</a></td>
+      <td><a href="{{ route('product.edit', $product ) }}" class="btn btn-primary">Chỉnh sửa</a></td>
       <td>
         {!! Form::open(['method' => 'DELETE', 'route' => ['product.destroy', $product], 'onsubmit' => 'return ConfirmDelete()']) !!}
         {!! Form::submit('Xóa', ['class' => 'btn btn-danger'])!!}

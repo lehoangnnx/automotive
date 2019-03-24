@@ -15,7 +15,7 @@
       <th scope="row">{{$loop->index }}</th>
       <td><a href="{{ route('attribute-value.edit', $attributeValue ) }}" class="product-name"><h5>{{ $attributeValue->attribute->name }}</h5></a></td>
       <td>{{ $attributeValue->name }}</td>
-      <td><a href="{{ route('attribute-value.edit', $attributeValue ) }}" class="btn btn-primary">Sửa</a></td>
+      <td><a href="{{ route('attribute-value.edit', $attributeValue ) }}" class="btn btn-primary">Chỉnh sửa</a></td>
       <td>
         {!! Form::open(['method' => 'DELETE', 'route' => ['attribute-value.destroy', $attributeValue], 'onsubmit' => 'return ConfirmDelete()']) !!}
         {!! Form::submit('Xóa', ['class' => 'btn btn-danger'])!!}

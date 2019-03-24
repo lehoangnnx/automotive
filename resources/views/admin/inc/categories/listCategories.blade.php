@@ -15,7 +15,7 @@
             <td>
             <a href="{{ route('category.edit', $category ) }}"><h5 class="product-name">{{$category->name}}</h5></a>
             </td>
-            <td><a href="{{ route('category.edit', $category ) }}" class="btn btn-primary">Sửa</a></td>
+            <td><a href="{{ route('category.edit', $category ) }}" class="btn btn-primary">Chỉnh sửa</a></td>
             <td>
                 {!! Form::open(['method' => 'DELETE', 'route' => ['category.destroy', $category], 'onsubmit' => 'return ConfirmDelete()']) !!}
                 {!! Form::submit('Xóa', ['class' => ' btn btn-danger'])!!}
