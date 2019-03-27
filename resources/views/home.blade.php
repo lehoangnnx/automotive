@@ -55,12 +55,6 @@
                                                                
                                                             </h3>
                                                             <h5>{{$category->name}}</h5>
-        
-                                                            <div class="p-car-feature">
-                                                                <a href="#">2017</a>
-                                                                <a href="#">manual</a>
-                                                                <a href="#">AIR CONDITION</a>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

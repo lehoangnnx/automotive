@@ -52,7 +52,7 @@
                             <li><a href="#">Sản Phẩm</a>
                                 <ul>
                                     @foreach ($categories as $category)
-                                      <li><a href="car-left-sidebar.html">{{ $category->name }}</a></li>
+                                      <li><a href="{{route('productCategory', [$category->id])}}">{{ $category->name }}</a></li>
                                     @endforeach
                                 </ul>
                             </li>

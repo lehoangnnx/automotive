@@ -40,6 +40,7 @@ Route::get('/clear', function() {
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/detail/{id}', 'DetailController@index')->name('detail');
 Route::post('/send-contact', 'HomeController@sendContact')->name('sendContact');
+Route::get('/category/{id}', 'HomeController@productCategory')->name('productCategory');
 
 Route::get('/admin', 'Admin\DashboardController@index')->name('admin');
 Route::resource('admin/category', 'Admin\CategoryController');

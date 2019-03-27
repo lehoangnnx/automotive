@@ -24,4 +24,11 @@ class HomeController extends Controller
         $contact = new Contact;
         return view('home')->with('categories', $categories);
     }
+    public function productCategory($id)
+    {
+        $categories = Category::all();
+        $category = Category::find($id);
+        return view('category')->with('categories', $categories)
+        ->with('category', $category);
+    }
 }
