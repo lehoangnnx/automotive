@@ -63,15 +63,16 @@
                     <!-- Single Sidebar Start -->
                     <div class="single-sidebar">
                         <h3>THÔNG TIN LIÊN HỆ</h3>
-
                         <div class="sidebar-body">
-                            <p><i class="fa fa-mobile"></i> +8801816 277 243</p>
-                            <p><i class="fa fa-clock-o"></i> Mon - Sat 8.00 - 18.00</p>
+                            <p><i class="fa fa-user"></i> Nguyễn Văn Hậu</p>
+                            <p><i class="fa fa-mobile"></i>0986 585 811</p>
+                            <p><i class="fa fa-envelope"></i>leconghau5432@gmail.com</p>
+                            <p><i class="fa fa-clock-o"></i> Từ thứ 2 - Chủ nhật, 24/7</p>
                         </div>
                     </div>
                     <div class="single-sidebar">
                         <div class="review-area">
-                            <h3>Liên Hệ</h3>
+                            <h3>ĐỂ LẠI THÔNG TIN TƯ VẤN</h3>
                             <div class="review-form p-3">
                                 <form action="{{ route('sendContact')}}" method="POST">
                                     @csrf

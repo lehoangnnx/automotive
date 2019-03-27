@@ -77,68 +77,46 @@
                             <h2>About Us</h2>
                             <div class="widget-body">
                                 <img src="{{asset('img/logo.png')}}" alt="JSOFT">
-                                <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
-                                <div class="newsletter-area">
-                                    <form action="index.html">
-                                        <input type="email" placeholder="Subscribe Our Newsletter">
-                                        <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
-                                    </form>
+                                <!--Start card profile -->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nguyễn Văn Hậu</h5>
+                                        <hr>
+                                        <h5><p class="card-text">PHÒNG KINH DOANH</p></h5>
+                                        <p class="card-text">0986 585 811</p>
+                                        <hr>
+                                        <h5>Thời gian làm việc</h5>
+                                        <p class="card-text">Bất kể khi nào bạn cần, hỗ trợ 24/7, 7 ngày trong tuần</p>
+                                        <a href="#" class="btn btn-primary">Liên hệ</a>
+                                    </div>
                                 </div>
-
+                                <!--End card profile -->
                             </div>
                         </div>
                     </div>
                     <!-- Single Footer Widget End -->
-
                     <!-- Single Footer Widget Start -->
                     <div class="col-lg-4 col-md-6">
                         <div class="single-footer-widget">
-                            <h2>Recent Posts</h2>
+                            <h2>Thông tin Show room</h2>
                             <div class="widget-body">
-                                <ul class="recent-post">
-                                    <li>
-                                        <a href="#">
-                                           Hello Bangladesh!
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                          Lorem ipsum dolor sit amet
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                           Hello Bangladesh!
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            consectetur adipisicing elit?
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Footer Widget End -->
-
-                    <!-- Single Footer Widget Start -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-footer-widget">
-                            <h2>get touch</h2>
-                            <div class="widget-body">
-                                <p>Lorem ipsum doloer sited amet, consectetur adipisicing elit. nibh auguea, scelerisque sed</p>
+                                <p>Công ty Cổ phần Đầu tư & Thương mại Tây Ford Đà Lạt</p>
 
                                 <ul class="get-touch">
-                                    <li><i class="fa fa-map-marker"></i> 800/8, Kazipara, Dhaka</li>
-                                    <li><i class="fa fa-mobile"></i> +880 01 86 25 72 43</li>
-                                    <li><i class="fa fa-envelope"></i> kazukamdu83@gmail.com</li>
+                                    <li><i class="fa fa-map-marker"></i><a href="https://goo.gl/maps/PuUqUvPxnHK2" target="_blank">108 Hùng Vương - P.11 - TP.Đà Lạt - Lâm Đồng.</a></li>
+                                    <li><i class="fa fa-mobile"></i>0986 585 811</li>
+                                    <li><i class="fa fa-envelope"></i>leconghau5432@gmail.com</li>
                                 </ul>
-                                <a href="https://goo.gl/maps/b5mt45MCaPB2" class="map-show" target="_blank">Show Location</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Footer Widget End -->
+                    <!-- Single Footer Widget Start -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-footer-widget">
+                            <h2>Vị trí</h2>
+                            <div class="widget-body">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.4383726345336!2d108.47404381518089!3d11.944121439819066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317113aa8bdd77eb%3A0x7a7c43a966667d05!2zMTA4IEjDuW5nIFbGsMahbmcsIFBoxrDhu51uZyAxMSwgVGjDoG5oIHBo4buRIMSQw6AgTOG6oXQsIEzDom0gxJDhu5NuZywgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1553646551709" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -153,9 +131,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
                     </div>
                 </div>
             </div>

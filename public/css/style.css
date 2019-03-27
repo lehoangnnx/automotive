@@ -3254,3 +3254,11 @@ body,
 .title-in-slider {
     color: white;
 }
+
+.card-text {
+    color: black;
+}
+
+.card-img-top {
+    width: 50%;
+}
