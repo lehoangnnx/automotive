@@ -28,7 +28,9 @@ class DashboardController extends Controller
     {
         $categories = Category::all();
         $products = Product::all();
+        $contacts = Contact::all();
         return view('admin.dashboard')->with('categories', $categories)
-        ->with('products', $products);
+        ->with('products', $products)
+        ->with('contacts', $contacts);
     }
 }

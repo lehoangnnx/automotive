@@ -80,6 +80,12 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $res = Contact::destroy($id);
+        if($res){
+            $status = 'Xóa Thành Công'; 
+        }else {
+            $status = 'Xóa Thất Bại';
+        }
+        return redirect('admin')->with('status',  $status);
     }
 }
