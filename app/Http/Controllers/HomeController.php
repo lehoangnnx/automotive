@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use App\Category;
 use App\Contact;
+use App\Product;
 class HomeController extends Controller
 {
 
@@ -21,9 +24,23 @@ class HomeController extends Controller
 
     public function sendContact(Request $request)
     {
-        $contact = new Contact;
-        return view('home')->with('categories', $categories);
+        try{
+            $contact = new Contact;
+            $product = Product::find($request->input('product_id'));
+            $categories = Category::all();
+            $contact->id = $request->get('id');
+            $contact->name = $request->input('name');
+            $contact->phone = $request->input('phone');
+            $contact->email = $request->input('email');
+            $contact->content = $request->input('content');
+            $contact->save();
+        } catch(\Throwable $th){
+
+        }
+        return view('detail')->with('categories', $categories)
+                             ->with('product', $product);
     }
+
     public function productCategory($id)
     {
         $categories = Category::all();

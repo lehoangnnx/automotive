@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
 use App\Product;
+use App\Contact;
 
 class DashboardController extends Controller
 {

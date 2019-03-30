@@ -56,7 +56,6 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>

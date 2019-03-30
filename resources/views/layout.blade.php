@@ -80,7 +80,7 @@
                                 <!--Start card profile -->
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Nguyễn Văn Hậu</h5>
+                                        <h5 class="card-title">Lê Công Hậu</h5>
                                         <hr>
                                         <h5><p class="card-text">PHÒNG KINH DOANH</p></h5>
                                         <p class="card-text">0986 585 811</p>
