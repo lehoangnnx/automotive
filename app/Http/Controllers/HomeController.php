@@ -26,9 +26,6 @@ class HomeController extends Controller
     {
         try{
             $contact = new Contact;
-            $product = Product::find($request->input('product_id'));
-            $categories = Category::all();
-            $contact->id = $request->get('id');
             $contact->name = $request->input('name');
             $contact->phone = $request->input('phone');
             $contact->email = $request->input('email');
@@ -37,13 +34,7 @@ class HomeController extends Controller
         } catch(\Throwable $th){
 
         }
-        if(isset($product)) {
-            return view('detail')->with('categories', $categories)
-                             ->with('product', $product);
-        } else {
-            return view('home')->with('categories', $categories);
-        }
-
+        return redirect()->back();
     }
 
     public function productCategory($id)
