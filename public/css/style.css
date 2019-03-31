@@ -2418,14 +2418,14 @@ body,
 .single-sidebar {
 	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-	color: #575757;
+	color:#575757;
 	font-size: 15px;
 	margin-bottom: 30px;
 }
 
 .single-sidebar h3 {
 	background-color: #47A8E5;
-	color: #222;
+	color:white;
 	font-size: 18px;
 	padding: 12px 5px;
 	text-align: center;

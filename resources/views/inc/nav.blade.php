@@ -48,7 +48,7 @@
                 <div class="col-lg-8 d-none d-xl-block">
                     <nav class="mainmenu alignright">
                         <ul>
-                            <li class="active"><a href="#">Trang Chủ</a></li>
+                            <li><a href="{{route('home')}}">Trang Chủ</a></li>
                             <li><a href="#">Sản Phẩm</a>
                                 <ul>
                                     @foreach ($categories as $category)

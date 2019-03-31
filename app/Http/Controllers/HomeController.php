@@ -37,8 +37,13 @@ class HomeController extends Controller
         } catch(\Throwable $th){
 
         }
-        return view('detail')->with('categories', $categories)
+        if(isset($product)) {
+            return view('detail')->with('categories', $categories)
                              ->with('product', $product);
+        } else {
+            return view('home')->with('categories', $categories);
+        }
+
     }
 
     public function productCategory($id)

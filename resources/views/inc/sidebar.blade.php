@@ -67,9 +67,6 @@
                     <div class="display-table-cell">
                         <div class="about-content text-center">
                             <p></p>
-                            <div class="about-btn">
-                                <a href="#">Liên hệ</a>
-                            </div>
                         </div>
                     </div>
                 </div>

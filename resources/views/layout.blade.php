@@ -87,7 +87,6 @@
                                         <hr>
                                         <h5>Thời gian làm việc</h5>
                                         <p class="card-text">Bất kể khi nào bạn cần, hỗ trợ 24/7, 7 ngày trong tuần</p>
-                                        <a href="#" class="btn btn-primary">Liên hệ</a>
                                     </div>
                                 </div>
                                 <!--End card profile -->
