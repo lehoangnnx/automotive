@@ -2535,7 +2535,7 @@ body,
 }
 
 .car-details-content h2 span {
-	float: right;
+	/* float: right; */
 	font-size: 18px;
 }
 
@@ -3261,4 +3261,17 @@ body,
 
 .card-img-top {
     width: 50%;
+}
+
+.content-intro {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header-paragraph {
+    border: none;
+}
+
+.content-page {
+    margin-left: 20px;
 }

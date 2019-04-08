@@ -12,7 +12,7 @@
         </div>
         <div class="single-sidebar">
             <div class="review-area">
-                <h3 class="label-header">ĐỂ LẠI THÔNG TIN TƯ VẤN</h3>
+                <h3 class="label-header">ĐĂNG KÝ LÁI THỬ </h3>
                 <div class="review-form p-3">
                 <p>Quý khách nhập thông tin dòng xe quý khách quan tâm, bộ phận báo giá sẽ gửi thông tin chương trình khuyến mãi đến quý khách ngay khi thông tin được gửi đi</p>
                 <hr>

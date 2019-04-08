@@ -41,8 +41,13 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/detail/{id}', 'DetailController@index')->name('detail');
 Route::post('/send-contact', 'HomeController@sendContact')->name('sendContact');
 Route::get('/category/{id}', 'HomeController@productCategory')->name('productCategory');
+Route::get('/intro', 'HomeController@goIntro')->name('goIntro');
+Route::get('/category/99', 'HomeController@getOldCar')->name('getOldCar');
+Route::get('/contact-to', 'HomeController@goContact')->name('contactTo');
+Route::get('/test-drive-car', 'HomeController@goTestDriveCar')->name('goTestDriveCar');
 
 Route::get('/admin', 'Admin\DashboardController@index')->name('admin');
 Route::resource('admin/category', 'Admin\CategoryController');
 Route::resource('admin/product', 'Admin\ProductController');
 Route::resource('admin/contact', 'Admin\ContactController');
+

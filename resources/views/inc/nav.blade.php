@@ -37,7 +37,7 @@
         <div class="container">
             <div class="row">
                 <!--== Logo Start ==-->
-                <div class="col-lg-4">
+                <div class="col-lg-2">
                     <a href="{{route('home')}}" class="logo">
                         <img src="{{asset('img/logo.png')}}" alt="JSOFT">
                     </a>
@@ -45,15 +45,23 @@
                 <!--== Logo End ==-->
 
                 <!--== Main Menu Start ==-->
-                <div class="col-lg-8 d-none d-xl-block">
+                <div class="col-lg-10 d-none d-xl-block">
                     <nav class="mainmenu alignright">
                         <ul>
                             <li><a href="{{route('home')}}">Trang Chủ</a></li>
+                            <li><a href="{{route('goIntro')}}">Giới thiệu</a></li>
                             <li><a href="#">Sản Phẩm</a>
                                 <ul>
                                     @foreach ($categories as $category)
                                       <li><a href="{{route('productCategory', [$category->id])}}">{{ $category->name }}</a></li>
                                     @endforeach
+                                </ul>
+                            </li>
+                            <li><a href="{{route('getOldCar')}}">TRUNG TÂM XE CŨ</a></li>
+                            <li><a href="{{route('goTestDriveCar')}}">ĐĂNG KÝ LÁI THỬ</a></li>
+                            <li><a href="#">Liên hệ</a>
+                                <ul>
+                                    <li><a href="{{route('contactTo')}}">Gọi ngay</a></li>
                                 </ul>
                             </li>
                         </ul>

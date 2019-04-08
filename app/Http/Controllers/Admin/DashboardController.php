@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Product;
 use App\Contact;
+use App\User;
 
 class DashboardController extends Controller
 {

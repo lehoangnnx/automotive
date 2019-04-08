@@ -22,6 +22,11 @@ class HomeController extends Controller
         return view('home')->with('categories', $categories);
     }
 
+    public function goIntro(){
+        $categories = Category::all();
+        return view('intro')->with('categories', $categories);;
+    }
+
     public function sendContact(Request $request)
     {
         try{
@@ -43,5 +48,25 @@ class HomeController extends Controller
         $category = Category::find($id);
         return view('category')->with('categories', $categories)
         ->with('category', $category);
+    }
+
+    public function getOldCar($id)
+    {
+        $categories = Category::all();
+        $category = Category::find($id);
+        return view('category')->with('categories', $categories)
+        ->with('category', $category);
+    }
+
+    public function goContact()
+    {
+        $categories = Category::all();
+        return view('contactTo')->with('categories', $categories);
+    }
+
+    public function goTestDriveCar()
+    {
+        $categories = Category::all();
+        return view('testDriveCar')->with('categories', $categories);
     }
 }

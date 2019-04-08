@@ -1,4 +1,4 @@
-@extends('layout') 
+@extends('layout')
 @section('content')
 <!--== Page Title Area Start ==-->
 <section id="page-title-area" class="section-padding overlay">
@@ -24,25 +24,24 @@
             <!-- Car List Content Start -->
             <div class="col-lg-8">
                 <div class="car-list-content">
-                        <div class="row">
-                    <!-- Single Car Start -->
-                    @foreach ($category->product as $item)
-                   
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single-car-wrap">
-                            <div class="car-list-thumb" style="height: auto">
+                    <div class="row">
+                        <!-- Single Car Start -->
+                        @foreach ($category->product as $item)
+                        <div class="col-lg-6 col-md-6">
+                            <div class="single-car-wrap">
+                                <div class="car-list-thumb" style="height: auto">
                                     <img style="height: 215px;width: 100%;" src="{{ asset('uploads')}}/{{ $item->images }}">
-                            </div>
-                            <div class="car-list-info without-bar">
-                                <h2><a href="{{ route('detail', [$item->id] )}}">{{ $item->name}}</a></h2>
-                                <h5 class="m-0 p-0 border-0">{{ $item->price}} VND</h5>
+                                </div>
+                                <div class="car-list-info without-bar">
+                                    <h2><a href="{{ route('detail', [$item->id] )}}">{{ $item->name}}</a></h2>
+                                    <h5 class="m-0 p-0 border-0">{{ $item->price}} VND</h5>
+                                </div>
                             </div>
                         </div>
+                        @endforeach
+                        <!-- Single Car End -->
                     </div>
-                    @endforeach
-                    <!-- Single Car End -->
                 </div>
-            </div>
             </div>
             <!-- Car List Content End -->
 

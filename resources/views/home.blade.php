@@ -1,4 +1,4 @@
-@extends('layout') 
+@extends('layout')
 @section('content')
 @include('inc.sidebar')
 <section id="choose-car" class="section-padding">
@@ -18,7 +18,6 @@
                 <!-- Choose Area Content Start -->
                 <div class="col-lg-12">
                     <div class="choose-content-wrap">
-
                         <!-- Choose Area Tab content -->
                         <div class="tab-content" id="myTabContent">
                             <!-- Popular Cars Tab Start -->
@@ -32,13 +31,13 @@
                                             <a href="#" data-filter=".{{$category->id}}">{{$category->name}}</a>
                                         @endforeach
                                     </div>
-                                    <!-- Filtering Menu --> 
+                                    <!-- Filtering Menu -->
 
                                     <!-- PopularCars Tab Content Start -->
                                     <div class="row popular-car-gird">
                                         <!-- Single Popular Car Start -->
                                         @foreach ($categories as $category)
-                                            
+
                                         @foreach ($category->product as $product)
                                             <div class="col-lg-4 col-md-6 con {{ $category->id }} mpv">
                                                     <div class="single-popular-car">
@@ -48,11 +47,11 @@
                                                               <img style="height: 215px;width: 100%;" src="{{ asset('uploads')}}/{{ $product->images }}">
                                                            </a>
                                                         </div>
-        
+
                                                         <div class="p-car-content">
                                                             <h3>
                                                                 <a href="{{ route('detail', [$product->id] )}}">{{$product->name}}</a>
-                                                               
+
                                                             </h3>
                                                             <h5>{{$category->name}}</h5>
                                                         </div>

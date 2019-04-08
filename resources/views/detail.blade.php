@@ -23,12 +23,12 @@
                     <h2>{{ $product->name}}<span class="price">Giá: <b>{{ $product->price}} VND</b></span></h2>
                     <div class="car-preview-crousel">
                         <div class="single-car-preview">
-                            <img src="{{ asset('uploads')}}/{{ $product->images }}">
+                            <img src="{{ asset('public/uploads')}}/{{ $product->images }}">
                         </div>
 
                         @foreach($product->listImages as $productListImages)
                         <div class="single-car-preview">
-                            <img src="{{ asset('uploads')}}/{{ $productListImages->images }}">
+                            <img src="{{ asset('public/uploads')}}/{{ $productListImages->images }}">
                         </div>
                         @endforeach
 
@@ -48,7 +48,7 @@
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 @if (!empty($product->specification_images))
-                                <img src="{{ asset('uploads')}}/{{ $product->specification_images }}">                                    
+                                <img src="{{ asset('uploads')}}/{{ $product->specification_images }}">
                                 @endif
                                 {!! $product->specification_descriptions !!}
                             </div>
